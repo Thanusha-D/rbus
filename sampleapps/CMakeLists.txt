@@ -68,6 +68,14 @@ add_executable(rbusValueChangeConsumer consumer/rbusValueChangeConsumer.c)
 add_dependencies(rbusValueChangeConsumer rbus)
 target_link_libraries(rbusValueChangeConsumer rbus)
 
+add_executable(rbusTest_ValueChangeProvider provider/rbusTest_ValueChangeProvider.c)
+add_dependencies(rbusTest_ValueChangeProvider rbus)
+target_link_libraries(rbusTest_ValueChangeProvider rbus)
+
+add_executable(rbusTest_ValueChangeConsumer consumer/rbusTest_ValueChangeConsumer.c)
+add_dependencies(rbusTest_ValueChangeConsumer rbus)
+target_link_libraries(rbusTest_ValueChangeConsumer rbus)
+
 add_executable(rbusMethodProvider provider/rbusMethodProvider.c)
 add_dependencies(rbusMethodProvider rbus)
 target_link_libraries(rbusMethodProvider rbus)
@@ -113,6 +121,8 @@ install (TARGETS
     rbusGeneralEventConsumer
     rbusValueChangeProvider
     rbusValueChangeConsumer
+    rbusTest_ValueChangeProvider
+    rbusTest_ValueChangeConsumer
     rbusMessageListener
     rbusMessageSender
     RUNTIME DESTINATION bin)
