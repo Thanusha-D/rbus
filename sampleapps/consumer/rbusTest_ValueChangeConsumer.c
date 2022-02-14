@@ -28,7 +28,6 @@
 #include <getopt.h>
 #include <rbus.h>
 
-//int runtime = 60;
 #define PRINT_EVENT(EVENT, SUBSCRIPTION) \
     printf("\n############################################################################\n" \
         " Event received in handler: %s\n" \
@@ -100,15 +99,16 @@ int main(int argc, char *argv[])
         0);
     printf("After rbusEvent_Subscribe function...\n");
 
-    sleep(15);
+    sleep(30);
 
-    printf("Unsubscribing Device.Provider1.Param1\n");
+    /*printf("Unsubscribing Device.Provider1.Param1\n");
 
     rbusEvent_Unsubscribe(
         handle,
         "Device.X_RDK_WanManager.CurrentActiveInterface");
-    printf("After rbusEvent_Unsubscribe function...\n"); 
-
+    printf("After rbusEvent_Unsubscribe function...\n");*/ 
+   
+    while(1);
     rbus_close(handle);
     return rc;
 }
